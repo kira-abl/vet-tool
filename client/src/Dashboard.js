@@ -1,5 +1,5 @@
 import React from "react";
-import "./Menu.css";
+import "./Dashboard.css";
 import Container from "./Container/Container.js";
 import { Link } from "react-router-dom";
 import Button from "./Button/Button.js";
@@ -9,7 +9,8 @@ const fileDownload = require('js-file-download');
 
 
 
-const MainMenu = () => {
+
+const Dashboard = () => {
 
   let [indicator, setIndicator] = React.useState("");
   console.log("Indicator", indicator);
@@ -70,15 +71,19 @@ const MainMenu = () => {
   return (
   <div>
     <div className="main">
-      <Link to="./" style={{ textDecoration: "none" }}>
-        <Container className="smallContFlex">
-
-          <div>SCORE</div>
+        <Container className="brownContFlex">
+        <Button function={GetData} className="smallButton1">
+        {" "}
+        DATA{" "}
+      </Button >
         </Container>
-      </Link>
 
-
-
+        <Container className="greenContFlex">
+        <Button function={GetFiles} className="smallButton2">
+        {" "}
+        IMAGES{" "}
+      </Button >
+        </Container>
 
         <div className={indicator}>
 
@@ -92,4 +97,4 @@ const MainMenu = () => {
 );
 };
 
-export default MainMenu;
+export default Dashboard;
