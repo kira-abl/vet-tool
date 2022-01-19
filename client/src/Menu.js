@@ -73,7 +73,7 @@ const MainMenu = () => {
       <Link to="./" style={{ textDecoration: "none" }}>
         <Container className="smallContFlex">
 
-          <div>SCORE</div>
+          <div>START AGAIN</div>
         </Container>
       </Link>
 
