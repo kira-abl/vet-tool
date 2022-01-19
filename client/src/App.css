@@ -15,14 +15,14 @@
     background-color: white;
 }
 .sv-root-modern ::-webkit-scrollbar {
-    height: 6px;
-    width: 6px;
+    height: 0px;
+    width: 0px;
     background-color: white;
 }
 
 .sv-root-modern ::-webkit-scrollbar-thumb {
-    background: #f3f3f3;
+    background: white;
 }
 .sv-root-modern ::-webkit-scrollbar-thumb {
-    background: #1ab394;
+    background: white;
 }
