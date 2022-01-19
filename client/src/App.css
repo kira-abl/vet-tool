@@ -10,3 +10,19 @@
   color: green;
   font-size: 50px;
 }
+
+.sv-root-modern ::-webkit-scrollbar {
+    background-color: white;
+}
+.sv-root-modern ::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+    background-color: white;
+}
+
+.sv-root-modern ::-webkit-scrollbar-thumb {
+    background: #f3f3f3;
+}
+.sv-root-modern ::-webkit-scrollbar-thumb {
+    background: #1ab394;
+}
