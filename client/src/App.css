@@ -56,8 +56,14 @@ margin-bottom: -10px; }
     text-align: center
   }
 
-  .sv-logo {
+  /* .sv-logo {
 
-    margin-top: 1%;
+    margin-top: -10%;
 
-    }
+    } */
+
+    .sv-title {
+
+      padding-top: 5px;
+
+      }
