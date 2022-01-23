@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
 }
 
@@ -26,3 +27,37 @@
 .sv-root-modern ::-webkit-scrollbar-thumb {
     background: white;
 }
+
+#sq_101 .sv-description, #sq_102 .sv-description, #sq_103 .sv-description {
+  color: #3D9297;
+  font-size: 19px;
+  text-align: center
+}
+
+#sq_101, #sq_100, #sq_102, #sq_103, #sq_104  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+}
+
+
+#sq_100, #sq_101, #sq_102, #sq_103, #sq_104  {
+margin-top: -20px;
+margin-bottom: -10px; }
+
+#sq_104 .sv-description {
+  font-size: 18px;
+}
+
+#sq_100 .sv-description {
+
+    font-size: 18px;
+    text-align: center
+  }
+
+  .sv-logo {
+
+    margin-top: -15%;
+
+    }
