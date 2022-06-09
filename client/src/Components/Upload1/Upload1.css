@@ -1,0 +1,182 @@
+
+
+.elipse {
+
+  width: 71px;
+  height: 71px;
+  left: 20.5px;
+  top: 0px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+
+  /* Pale orange */
+
+  background: #FAF7ED;
+}
+
+.form {
+    background-color: yellow;
+    width: 50%;
+    padding: 15px;
+    height: 400px;
+    display: none;
+
+    border: 1px solid white;
+
+    margin-left: 80px;
+    i,
+    p {
+      color: white;
+    }
+    }
+
+
+
+    .hide {
+      display: none;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+
+
+
+      width: 288px;
+      height: 32px;
+      left: 16px;
+
+      box-sizing: border-box;
+      background: #FCFCFD;
+      border-radius: 12px;
+      border-style: none;
+
+
+      object-fit: contain;
+    }
+
+.show {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+
+
+
+width: 286px;
+height: 32px;
+left: 16px;
+
+
+background: #FCFCFD;
+border-radius: 12px;
+border-style: none;
+
+
+object-fit: contain;
+
+
+      /* Pale orange */
+
+    }
+
+.imageSmall {
+
+width: 28px;
+height: 100%;
+padding-right: 10px;
+padding-left: 10px;
+border-style: none;
+
+    }
+
+    .text {
+      color: #828282;
+      font-family: 'Poppins', sans-serif;
+      font-weight: normal;
+      font-style: normal;
+
+      font-size: 12px;
+      line-height: 17px;
+
+    }
+
+
+        .button {
+          width: 192px;
+          height: 48px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background: #F26A56;
+          color: white;
+          border-radius: 4px;
+          border-style: hidden;
+          padding: 20px 0px;
+          font-family: 'Poppins', sans-serif;
+          font-weight: 600;
+          font-style: normal;
+          font-size: 14px;
+          line-height: 24px;
+        }
+
+.exampleAbove {
+
+          width: 261px;
+          padding-top: 32px;
+          margin:auto;
+          border-radius: 4px;
+
+
+}
+
+.exampleAbove img {
+
+          width: 100%;
+          height: 100%;
+          border-radius: 4px;
+
+
+}
+
+.buttonNav1 {
+
+border-radius: 4px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 16px 48px;
+font-family: 'Poppins', sans-serif;
+font-weight: 600;
+font-style: normal;
+
+font-size: 14px;
+line-height: 24px;
+
+
+
+}
+
+.buttonBox {
+
+
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+margin-top: 32px;
+width: 90%;
+
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 107px;
+
+
+
+
+
+}

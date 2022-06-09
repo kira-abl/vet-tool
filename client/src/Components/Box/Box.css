@@ -1,0 +1,72 @@
+.collapsible .content {
+    padding: 6px;
+    background-color: #FAF7ED;
+    font-family: Poppins;
+    font-weight: 400px;
+    font-size: 14px;
+    line-height: 23.8px;
+    padding: 18px 24px 18px 24px ;
+    margin: 0px 16px 16px 16px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.collapsible .contentHidden {
+    padding: 6px;
+    background-color: #FAF7ED;
+    font-family: Poppins;
+    font-weight: 400px;
+    font-size: 14px;
+    line-height: 23.8px;
+    padding: 18px 24px 18px 24px ;
+    margin: 16px;
+    border-radius: 8px;
+}
+
+.collapsible .headers {
+    background-color: #FAF7ED;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20.8px;
+    /* or 130% */
+
+    text-align: center;
+    margin-block-start: 1em;
+    margin-block-end: 0px;
+    padding: 18px 24px 18px 24px ;
+    margin: 16px 16px 0px 16px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.collapsible .headersHidden {
+    background-color: #FAF7ED;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20.8px;
+    /* or 130% */
+
+    text-align: center;
+    margin-block-start: 1em;
+    margin-block-end: 0px;
+    padding: 18px 24px 18px 24px ;
+    margin: 16px 16px 0px 16px;
+    border-radius: 8px 8px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.collapsible .headers .title {
+    font-weight: 700;
+}
+
+.preferences label {
+    display: block;
+    padding-bottom: 4px;
+}
