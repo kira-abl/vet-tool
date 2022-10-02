@@ -15,13 +15,20 @@ import SingleSelect from "../Dropdown/Dropdown.tsx"
 
 
 
+
+
+
 const Charts = props => {
+
+  useEffect(() => {
+  window.scrollTo(0, 0)
+}, [])
 
   const [data, setData] = React.useState("none");
   const [show, setShow] = React.useState("hidden");
 
 
-console.log(data);
+console.log("Data", data);
 console.log(show);
 
   const ConditionalLink = ({children}) => {
@@ -56,26 +63,29 @@ console.log(show);
   return (
     <div>
     <Logos
-      h3=<h3>Canine Body Condition Score</h3>
+      h3=<h3>Select Body Condition Score</h3>
       textNormal=<p>Consider the following chart and evaluate the dog's body condition score (BCS*):</p>
       list="true"
       start="4"
     />
 
-    <div className="strip">
+    {/* <div className="strip">
       <img src={"/assets/images/condition.png"}/>
-    </div>
+    </div> */}
     <p className="smallHeader">BSC:</p>
-      <Box/>
-      <SingleSelect
-
+      
+      <Box
       data={data}
-      setData={setData}
+      setData={setData}/>
+
+      {/* <SingleSelect
+
+      
       show={show}
-      setShow={show}/>
+      setShow={show}/> */}
 
       <div className={show}>
-      <p style={{ color: "#F26A56", marginBottom: "0px" }}>No score chosen</p>
+      <p style={{ color: "#F26A56", marginBottom: "0px" }}>No type chosen</p>
       </div>
 
       <div className="buttonBox">

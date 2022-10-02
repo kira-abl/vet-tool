@@ -1,18 +1,3 @@
-.blue {
-
-          width: 288px;
-
-          margin:auto;
-          border-radius: 8px;
-          position: relative;
-          display:flex;
-          justify-content: center;
-          align-items: center;
-
-
-
-}
-
 .blue img {
 
           width: 100%;
@@ -25,7 +10,7 @@
 .rectangle {
 
           width: 100%;
-          height: 46%;
+          height: 33%;
           background: #000000;
           opacity: 0.3;
           position: absolute;
@@ -73,22 +58,3 @@
 
     }
 
-    .buttonNav {
-
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 4px;
-    padding: 16px 48px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    margin: 18px auto 34px auto;
-    font-size: 14px;
-    line-height: 24px;
-
-
-
-    }

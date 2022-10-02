@@ -14,7 +14,6 @@ height: 20vh;
 .header {
 display: flex;
 flex-direction: column;
-
 margin: auto;
 
 }
@@ -34,6 +33,7 @@ margin: auto;
   align-content: center;
   left: 16px;
   margin: auto;
+  padding-bottom: 0px;
   /* or 175% */
 
   color: #0A0A0B;

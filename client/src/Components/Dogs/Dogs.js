@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Dogs.css";
 import Logos from "../Logos/Logos.js";
 import Button from "../Button/Button.js";
 import { Link } from "react-router-dom";
+import Form from "../Forms/Forms.js";
 
-const Welcome = props => {
+const Dogs = props => {
+
+  useEffect(() => {
+  window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div>
     <Logos
@@ -14,7 +20,10 @@ const Welcome = props => {
 
     />
 
-    
+    <Form
+    />
+
+
 
       <div className="buttonBox">
       <Link to="charts" style={{ textDecoration: "none" }}>
@@ -24,7 +33,7 @@ const Welcome = props => {
       </Button>
       </Link>
 
-      <Link to="charts" style={{ textDecoration: "none" }}>
+      <Link to="thanks" style={{ textDecoration: "none" }}>
       <Button width="104px" bcolor="#F26A56" height="40px" color="#FFFFFF" className="buttonNav1" border="0px"  >
         {" "}
         Next{" "}
@@ -36,4 +45,4 @@ const Welcome = props => {
   );
 };
 
-export default Welcome;
+export default Dogs;

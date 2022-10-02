@@ -10,10 +10,21 @@ import Upload2 from "./Components/Upload2/Upload2";
 import Welcome from "./Components/Welcome/Welcome";
 import Charts from "./Components/Charts/Charts";
 import Dogs from "./Components/Dogs/Dogs";
+import Thanks from "./Components/Thanks/Thanks";
+import Validation from "./Components/Validation/Validation";
+import Terms from "./Components/Terms/Terms";
 
 
 
-const App = () => {
+const App = (props) => {
+
+const [email, setEmail] = React.useState("this");
+const [user, setUser] = React.useState("no user");
+console.log(email, "In app");
+console.log(user, "In app");
+
+
+
   return (
     <div>
       <Switch>
@@ -25,6 +36,14 @@ const App = () => {
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/charts" component={Charts} />
         <Route path="/dogs" component={Dogs} />
+        <Route path="/thanks" component={Thanks} />
+        <Route path="/validation" render={(props)=>
+                                 <Validation email={email} user={user} setEmail={setEmail} setUser={setUser}/>}
+        
+        
+        
+        />
+        <Route path="/terms" component={Terms} />
       </Switch>
     </div>
   );

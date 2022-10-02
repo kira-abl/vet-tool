@@ -41,9 +41,6 @@
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
-
-
-
       width: 288px;
       height: 32px;
       left: 16px;
@@ -60,21 +57,15 @@
 .show {
 display: flex;
 flex-direction: row;
-justify-content: space-around;
+justify-content: space-between;
 align-items: center;
-
-
-
-width: 286px;
+width: 288px;
 height: 32px;
 left: 16px;
-
-
+margin: 16px auto auto auto;
 background: #FCFCFD;
 border-radius: 12px;
 border-style: none;
-
-
 object-fit: contain;
 
 
@@ -84,10 +75,12 @@ object-fit: contain;
 
 .imageSmall {
 
-width: 28px;
+width: 32px;
 height: 100%;
-padding-right: 10px;
-padding-left: 10px;
+border-radius: 2px;
+
+/* padding-right: 10px;
+padding-left: 10px; */
 border-style: none;
 
     }
@@ -105,7 +98,7 @@ border-style: none;
 
 
         .button {
-          width: 192px;
+          width: 288px;
           height: 48px;
           display: flex;
           flex-direction: row;
@@ -121,11 +114,13 @@ border-style: none;
           font-style: normal;
           font-size: 14px;
           line-height: 24px;
+          margin: 24px auto auto auto;
+          align-self: center;
         }
 
-.exampleAbove {
+.example {
 
-          width: 261px;
+          width: 287px;
           padding-top: 32px;
           margin:auto;
           border-radius: 4px;
@@ -133,7 +128,7 @@ border-style: none;
 
 }
 
-.exampleAbove img {
+.example img {
 
           width: 100%;
           height: 100%;
@@ -153,7 +148,6 @@ padding: 16px 48px;
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
 font-style: normal;
-
 font-size: 14px;
 line-height: 24px;
 
@@ -170,13 +164,16 @@ justify-content: space-between;
 align-items: center;
 margin-top: 32px;
 width: 90%;
-
 margin-left: auto;
 margin-right: auto;
 margin-bottom: 107px;
 
-
-
-
-
 }
+
+.dogImage1 {
+        
+  width: 30px;
+  height: 72px;
+  
+  }
+

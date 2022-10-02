@@ -18,17 +18,17 @@ export const colourOptions: readonly ColourOption[] = [
   { value: '9', label: '9 - Over Ideal', color: '#00875A' },
 ];
 
-export interface FlavourOption {
+export interface DogOption {
   readonly value: string;
   readonly label: string;
   readonly rating: string;
 }
 
-export const flavourOptions: readonly FlavourOption[] = [
-  { value: 'vanilla', label: 'Vanilla', rating: 'safe' },
-  { value: 'chocolate', label: 'Chocolate', rating: 'good' },
-  { value: 'strawberry', label: 'Strawberry', rating: 'wild' },
-  { value: 'salted-caramel', label: 'Salted Caramel', rating: 'crazy' },
+export const dogOptions: readonly FlavourOption[] = [
+  { value: 'Unknow Mixed Breed', label: 'Unknow Mixed Breed', rating: 'safe' },
+  { value: 'Affenprinscher', label: 'Affenprinscher', rating: 'good' },
+  { value: 'Afgan Hound	', label: 'Afgan Hound	', rating: 'wild' },
+  { value: 'Afgan Shepherd	', label: 'Afgan Shepherd	', rating: 'crazy' },
 ];
 
 export interface StateOption {
@@ -112,12 +112,12 @@ export const optionLength = [
   },
 ];
 
-export const dogOptions = [
-  { id: 1, label: 'Chihuahua' },
-  { id: 2, label: 'Bulldog' },
-  { id: 3, label: 'Dachshund' },
-  { id: 4, label: 'Akita' },
-];
+// export const dogOptions = [
+//   { id: 1, label: 'Chihuahua' },
+//   { id: 2, label: 'Bulldog' },
+//   { id: 3, label: 'Dachshund' },
+//   { id: 4, label: 'Akita' },
+// ];
 
 // let bigOptions = [];
 // for (let i = 0; i < 10000; i++) {
@@ -126,7 +126,7 @@ export const dogOptions = [
 
 export interface GroupedOption {
   readonly label: string;
-  readonly options: readonly ColourOption[] | readonly FlavourOption[];
+  readonly options: readonly ColourOption[] | readonly DogOption[];
 }
 
 export const groupedOptions: readonly GroupedOption[] = [
@@ -136,6 +136,6 @@ export const groupedOptions: readonly GroupedOption[] = [
   },
   {
     label: 'Flavours',
-    options: flavourOptions,
+    options: dogOptions,
   },
 ];

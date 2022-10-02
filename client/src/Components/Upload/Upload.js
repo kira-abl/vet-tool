@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Upload.css";
-import Frame from "../Frame/Frame.js";
+// import Frame from "../Frame/Frame.js";
+import NewFrame from "../NewFrame/NewFrame.js";
 import Logos from "../Logos/Logos.js";
 import Button from "../Button/Button.js";
 import { Link } from "react-router-dom";
@@ -12,7 +13,15 @@ import { Link } from "react-router-dom";
 
 const Upload = (props) => {
 
+  useEffect(() => {
+  window.scrollTo(0, 0)
+}, [])
+
   const mystyle = {
+    padding: "0px",
+  };
+
+  const iconStyle = {
     padding: "10px",
   };
 
@@ -23,6 +32,8 @@ const Upload = (props) => {
   const [caption, setCaption] = useState("");
   const [design, setDesign] = useState("hide");
   const [frameDesign, setFrameDesign] = useState("frame");
+  const [buttonColor, setButtonColor] = useState("rgba(0, 0, 0, 0.04)");
+  const [buttonTextColor, setButtonTextColor] = useState("#9E9E9E");
   const inputRef = useRef();
 
 
@@ -60,6 +71,7 @@ const Upload = (props) => {
       changeInput();
       setDesign("hide");
       setFrameDesign("frame");
+      setFiles(null);
     }
     else {
       console.log(e.target.src);
@@ -69,12 +81,28 @@ const Upload = (props) => {
     }
   }
 
+  const ConditionalLink = ({children}) => {
+    if (files !== null) {
+      console.log("In conditional link data is", files);
+      setButtonColor("#F26A56");
+      setButtonTextColor("#FFFFFF");
+        return <Link to="upload1" style={{ textDecoration: "none" }} >{children}</Link>;
+      }
+        else {
+          
+          console.log("Data is empty", files);
+          setButtonColor("#rgba(0, 0, 0, 0.04)");
+          setButtonTextColor("##9E9E9");
+            return <>{children}</>;
+          }
+  };
+
 
   return (
     <div>
       <Logos
-        h3=<h3>Canine Body Condition Score</h3>
-        textNormal=<p>Take a side-view picture of the dog (see example below)</p>
+        h3=<h3>Snap a Side Photo</h3>
+        textNormal=<p>Take a side-view picture of the dog (see example below):</p>
         start="1"
         list = "true"
       />
@@ -88,7 +116,23 @@ const Upload = (props) => {
         />
       </div>
 
-      <Frame
+      <NewFrame
+        text={name}
+        caption={caption}
+        imageDog={"/assets/images/Side.png"}
+        className="dogImage"
+        image=<img src={preview} className="imageSmall"/>
+        design={design}
+        frameDesign={frameDesign}
+        icon=<img src={"/assets/images/close-circle.png"} style={mystyle} onClick={(e) => {functionTwo(e)}}/>
+        button=<button onClick={handleClick} className="button">
+        <img src={"/assets/images/Vector.png"} style={iconStyle}/>
+                  {" "}
+                  Add a photo{" "}
+              </button>
+      />
+
+      {/* <Frame
         text={name}
         caption={caption}
         image=<img src={preview} className="imageSmall"/>
@@ -99,25 +143,25 @@ const Upload = (props) => {
                   {" "}
                   Choose file{" "}
               </button>
-      />
-      <div className="example">
+      /> */}
+      {/* <div className="example">
       <img src={"/assets/images/dog_side.jpeg"}/>
-      </div>
+      </div> */}
 
       <div className="buttonBox">
-      <Link to="/" style={{ textDecoration: "none" }}>
+      <Link to="/validation" style={{ textDecoration: "none" }}>
       <Button width="104px" bcolor="white" height="40px" color="#0A0A0B" className="buttonNav1" border="1px solid #000000"  >
-        {" "}
+        {" "} 
         Back{" "}
       </Button>
       </Link>
 
-      <Link to="/upload1" style={{ textDecoration: "none" }}>
-      <Button width="104px" bcolor="#F26A56" height="40px" color="#FFFFFF" className="buttonNav1" border="0px"  >
+      <ConditionalLink>
+      <Button width="104px" bcolor={buttonColor} height="40px" color={buttonTextColor} className="buttonNav1" border="0px"  >
         {" "}
         Next{" "}
       </Button>
-      </Link>
+      </ConditionalLink>
 
       </div>
 
