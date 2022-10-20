@@ -28,7 +28,7 @@ const Charts = props => {
   const [show, setShow] = React.useState("hidden");
 
 
-console.log("Data", data);
+console.log("Data in Charts", data);
 console.log(show);
 
   const ConditionalLink = ({children}) => {
