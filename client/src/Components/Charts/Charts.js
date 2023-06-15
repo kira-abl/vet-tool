@@ -3,20 +3,7 @@ import "./Charts.css";
 import Logos from "../Logos/Logos.js";
 import Button from "../Button/Button.js";
 import Box from "../Box/Box.js";
-import { Link, Redirect } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
-import { Component } from 'react'
-import Select from 'react-select';
-import SingleSelect from "../Dropdown/Dropdown.tsx"
-
-
-
-
-
-
-
-
-
+import { Link } from "react-router-dom";
 
 const Charts = props => {
 
@@ -69,20 +56,14 @@ console.log(show);
       start="4"
     />
 
-    {/* <div className="strip">
-      <img src={"/assets/images/condition.png"}/>
-    </div> */}
+    
     <p className="smallHeader">BSC:</p>
       
       <Box
       data={data}
       setData={setData}/>
 
-      {/* <SingleSelect
-
       
-      show={show}
-      setShow={show}/> */}
 
       <div className={show}>
       <p style={{ color: "#F26A56", marginBottom: "0px" }}>No type chosen</p>

@@ -41,7 +41,7 @@ form {
   .radioBoxColor {
 
     border-radius: 8px;
-    border: 1px solid rgba(255, 211, 91, 0.4);
+    border: 1px solid #FFD35B;
     width: 135px;
     height: 48px;
     display: flex;

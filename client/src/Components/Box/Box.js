@@ -1,25 +1,41 @@
-import React from 'react';
-import useCollapse from 'react-collapsed';
+import React, {useState, useRef, useEffect } from "react";
 
 
 import './Box.css';
 
 const Row = props => {
 
+  
+
     const borderNormal = {
-        borderColor: "red",
+        borderColor: "rgba(10, 10, 11, 0.2)",
       };
     
       const borderYellow = {
-        padding: "yellow",
+        borderColor: "rgba(255, 211, 91, 1)",
       };
+
+      
+      
+      const dogShow = {
+        
+      };
+
+      const dogHide = {
+        display: "none",
+      };
+
+      
   
 
     const [selected, setSelected] = React.useState("hidden");
     const [showRow, setShowRow] = React.useState("row");
-    // const [imageTitle, setImageTitle] = React.useState(props);
     let imageTitle = props;
     const [imageLink, setImageLink] = React.useState(imageTitle.url);
+    const [border, setBorder] = React.useState(borderNormal);
+    const [dog, setDog] = React.useState(dogShow);
+    const [dogYellow, setDogYellow] = React.useState(dogShow);
+    const [icon, setIcon] = React.useState("fa-solid fa-chevron-down");
 
     
   
@@ -27,43 +43,57 @@ const Row = props => {
     const unSelectRow = () => setSelected("hidden"); 
     const showTitle = () => setShowRow("rowSelected");
     const hideTitle = () => setShowRow("row");
-    const changeColor = () => setImageLink(imageTitle.url2);
-    const changeColorBack = () => setImageLink(imageTitle.url);
+    const colorBorder = () => setBorder(borderYellow);
+    const uncolorBorder = () => setBorder(borderNormal); 
+    const colorDog = () => setDogYellow(dogShow);
+    const uncolorDog = () => setDogYellow(dogHide); 
+    const colorDog1 = () => setDog(dogShow);
+    const uncolorDog1 = () => setDog(dogHide); 
 
 
-    
-    console.log("Selected", selected);
-    console.log("Data in Row", imageTitle);
-    console.log("Image", imageLink);
+
+
+    useEffect(() => {
+    });
+
+    useEffect(() => {
+      if (props.data !== props.title) {uncolorBorder(); colorDog1(); uncolorDog()};
+      if (props.data === props.title) {colorBorder(); colorDog(); uncolorDog1()};
+    }, [props.data]);
+     
       
 
     return (
       <div>
-        <div className={showRow}>
-        <div>   
-        <img src={imageLink} className="sideDog"     />
+        <div className={showRow} style={border}>
+        <div style={{paddingLeft: "1.5em"}}>   
+        <img src={props.url} className="sideDog" style={dog}
+             />
+        <img src={props.url2} className="sideDog" style={dogYellow}     />
         </div>
+        
             <div onClick={() => {
-            {
-              imageLink === imageTitle.url ? changeColor() : changeColorBack();
-              selected === "hidden" ? selectRow() : unSelectRow();
-              showRow === "row" ? showTitle() : hideTitle();
-              props.setData(props.title);
+            { 
+              props.data === props.title ? props.setData("none") : props.setData(props.title);
+              
+              // props.setData(props.title);
             }
           }}>
             {props.title}
             </div>
-            <div>
-        <i className={"fa-solid fa-chevron-down"}
+            <div style={{paddingRight: "1.8em"}}>
+        <i className={icon} 
         onClick={() => {
             {
               selected === "hidden" ? selectRow() : unSelectRow();
               showRow === "row" ? showTitle() : hideTitle();
+              icon === "fa-solid fa-chevron-up" ? setIcon("fa-solid fa-chevron-down") : setIcon("fa-solid fa-chevron-up");
+             
             }
           }}></i>   
         </div>
             </div>
-        <div className={selected}>
+        <div className={selected} style={border}>
              {props.children}
         </div>
        
@@ -71,32 +101,6 @@ const Row = props => {
     );
   };
 
-function Section(props) {
-    const config = {
-        defaultExpanded: props.defaultExpanded || false,
-        collapsedHeight: props.collapsedHeight || 0
-    };
-    const { getCollapseProps, getToggleProps, isExpanded } = useCollapse(config);
-
-    return (
-    <div className="collapsible">
-        <div className={(isExpanded ? 'headersHidden' : 'headers')} {...getToggleProps()}>
-        <div className="icon" style={{ color: "#F26A56" }}>
-            <i className={'fa-solid fa-chevron-' + (isExpanded ? 'down' : 'right')}></i>
-            </div>   
-            <div className="title">{props.title}</div>
-            <div className="icon" style={{ color: "#F26A56" }}>
-                <i className={'fa-solid fa-chevron-' + (isExpanded ? 'down' : 'right')}></i>
-            </div>
-        </div>
-        <div {...getCollapseProps()}>
-            <div className="content">
-                {props.children}
-            </div>
-        </div>
-    </div>
-    );
-}
 
 function Box(props) {
 
@@ -204,30 +208,6 @@ abdominal distention.                  </p>
             </Row>
 
           </div>
-
-          
-          
-
-//             <Section title="Type 2">
-//                 <p>
-//                 Ribs, lumbar vertebrae and pelvic bones
-//                 easily visible. No palpable fat. Some evidence
-//                 of other bony prominence. Minimal loss of
-//                 muscle mass.                </p>
-
-//             </Section>
-
-//             <Section title="Type 3">
-//             <p>
-//             Ribs easily palpated
-// and may be visible with no
-// palpable fat. Tops of lumbar
-// vertebrae visible. Pelvic
-// bones becoming prominent.
-// Obvious waist.                </p>
-//             </Section>
-
-
     );
 }
 
