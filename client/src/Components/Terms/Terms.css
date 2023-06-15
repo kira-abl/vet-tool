@@ -1,0 +1,33 @@
+.terms {
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 23.8px;
+    
+  margin: auto;
+  text-align: justify;
+    
+    
+  max-width: 90%;
+    
+    }
+
+ .bold {
+
+  font-weight: bold;
+  text-decoration: underline;
+        
+        }
+
+.terms ol {
+    counter-reset: item
+          }
+.terms li {
+     display: block
+          }
+.terms li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item
+          }

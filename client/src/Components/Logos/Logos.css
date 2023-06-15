@@ -1,0 +1,51 @@
+.logos {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin: auto;
+
+
+max-width: 100%;
+height: 20vh;
+
+}
+
+.header {
+display: flex;
+flex-direction: column;
+margin: auto;
+
+}
+
+.mainText {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  box-sizing: border-box;
+  width: 288px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  left: 16px;
+  margin: auto;
+  padding-bottom: 0px;
+  /* or 175% */
+
+  color: #0A0A0B;
+
+}
+
+
+.image {
+  max-width: 50%;
+    max-height: 100%;
+}
+
+ol{
+  padding-left: 30px;
+}

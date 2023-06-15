@@ -1,0 +1,252 @@
+
+
+
+
+form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.radio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 288px;
+  height: 48px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+}
+
+  .radioBox {
+    border-radius: 8px;
+    border: 1px solid #52575C;
+    width: 135px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-left: 0px;
+
+
+
+  }
+
+  .radioBoxColor {
+
+    border-radius: 8px;
+    border: 1px solid rgba(255, 211, 91, 0.4);
+    width: 135px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-left: 0px;
+    background-color: rgba(255, 211, 91, 0.1);
+    
+  }
+
+
+  .label {
+
+
+    width: 288px;
+    height: 21px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 21px;
+color: #000000;
+  }
+
+
+
+
+
+
+
+
+
+
+
+.form-control  {
+font-family: 'Lato', sans-serif;
+
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+width: 100%;
+/* identical to box height, or 24px */
+
+display: flex;
+align-items: center;
+justify-content: flex-start;
+letter-spacing: 0.005em;
+
+
+
+/* Neutral/900 */
+
+color: #0F172A;
+
+/* display: grid;
+grid-template-columns: 1em auto;
+gap: 1.5em; */
+}
+
+
+input[type="radio"] {
+
+margin: 3px 17px 0px 14px;
+width: 25.31px;
+height: 24px;
+appearance: none;
+background: #FFFFFF;
+border: 1px solid #52575C;
+border-radius: 50%;
+display: grid;
+place-content: center;
+
+}
+
+input[type="radio"]::before {
+  content: '';
+  width: 25.31px;
+  height: 24px;
+  border-radius: 50%;
+  transform: scale(0);
+  border: 1px solid #FFD35B;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  background-color: #FFD35B;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+
+
+.field input {
+  /* display:flex;
+  flex-direction:column; */
+  box-sizing: border-box;
+  width: 288px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #52575C;
+  padding: 10px 15px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+/* identical to box height, or 21px */
+
+
+  letter-spacing: 0.005em;
+
+/* Secondary_text */
+
+  color: #52575C;
+
+
+}
+
+.field label {
+
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 16px;
+
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+
+button[type="submit"],
+input[type="submit"] {
+  display: none;
+  background: #ec5990;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background: #bf1650;
+}
+
+button[type="submit"]:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+input:disabled {
+  opacity: 0.4;
+}
+
+input[type="button"]:hover {
+  transition: 0.3s all;
+}
+
+button[type="submit"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+button[type="button"] {
+  display: block;
+  appearance: none;
+  background: #333;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+hr {
+  margin-top: 30px;
+}
+
+button {
+
+  appearance: none;
+
+}
