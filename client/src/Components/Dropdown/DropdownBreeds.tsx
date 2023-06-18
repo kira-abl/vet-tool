@@ -21,6 +21,7 @@ interface State {
   closeMenuOnSelect: boolean,
   menuIsOpen: boolean;
   blurInputOnSelect: boolean,
+  
 
 }
 
@@ -36,6 +37,7 @@ export default class SingleSelect extends Component<{}, State, Props> {
     selectedOption: null,
     blurInputOnSelect: false,
     closeMenuOnSelect: false,
+    
 
 
 
@@ -158,6 +160,7 @@ export default class SingleSelect extends Component<{}, State, Props> {
     return (
       <Fragment>
         <Select
+        
         styles={{
           placeholder: (base) => ({
               ...base,
@@ -208,9 +211,12 @@ export default class SingleSelect extends Component<{}, State, Props> {
 
 
 
-
           width: "288px",
-          //border: "2px solid red"
+          //position: "absolute",
+          //zIndex: "1"
+
+          //border: "2px solid red",
+          //margingBottom: "8px"
 
           }),
 
@@ -270,8 +276,15 @@ fontWeight: 400,
           name="color"
           options={dogOptions}
           menuPlacement="bottom"
+          maxMenuHeight="21vh"
+          //menuPosition="absolute"
           isSelected={isSelected}
           isFocused={isFocused}
+          menuShouldScrollIntoView={true}
+          //closeMenuOnSelect={false}
+          
+
+          
 
 
         />

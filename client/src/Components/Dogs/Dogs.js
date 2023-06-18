@@ -36,7 +36,7 @@ const Dogs = props => {
       <Link to="thanks" style={{ textDecoration: "none" }}>
       <Button width="104px" bcolor="#F26A56" height="40px" color="#FFFFFF" className="buttonNav1" border="0px"  >
         {" "}
-        Next{" "}
+        Finish{" "}
       </Button>
       </Link>
 
