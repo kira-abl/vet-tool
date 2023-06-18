@@ -18,8 +18,9 @@ interface State {
   readonly isSearchable: boolean;
   readonly isSelected: boolean;
   isFocused: boolean;
-
+  closeMenuOnSelect: boolean,
   menuIsOpen: boolean;
+  blurInputOnSelect: boolean,
 
 }
 
@@ -33,6 +34,8 @@ export default class SingleSelect extends Component<{}, State, Props> {
     isRtl: false,
     isSearchable: true,
     selectedOption: null,
+    blurInputOnSelect: false,
+    closeMenuOnSelect: false,
 
 
 
@@ -93,7 +96,7 @@ export default class SingleSelect extends Component<{}, State, Props> {
 
 
 
-    const { isClearable, isSearchable, isDisabled, isLoading, isRtl, menuIsOpen, isSelected, isFocused, ControlProps } =
+    const { isClearable, isSearchable, isDisabled, isLoading, isRtl, menuIsOpen, isSelected, isFocused, ControlProps, blurInputOnSelect, closeMenuOnSelect } =
       this.state;
 
 
@@ -135,19 +138,19 @@ export default class SingleSelect extends Component<{}, State, Props> {
 
 
 
-      const dot = (color = 'transparent') => ({
+  const dot = (color = 'transparent') => ({
   alignItems: 'center',
   display: 'flex',
 
   ':before': {
     backgroundColor: color,
     borderRadius: 10,
-    content: '"\u2713"',
+    content: '""',
     display: 'block',
-    color: "#EE735C",
-    marginRight: 8,
+    color: "rgba(255, 211, 91)",
     height: 16,
     width: 10,
+    marginLeft: 5
   },
 });
 
@@ -182,7 +185,6 @@ export default class SingleSelect extends Component<{}, State, Props> {
           width: "288px",
           borderWidth: '1px',
           borderRadius: "8px",
-          // borderColor: "#87898E",
           boxShadow: "none",
           paddingLeft: 0,
 
@@ -199,6 +201,19 @@ export default class SingleSelect extends Component<{}, State, Props> {
 
           }),
 
+          
+            
+          menu: (base, state) => ({
+            ...base,
+
+
+
+
+          width: "288px",
+          //border: "2px solid red"
+
+          }),
+
           // clearIndicator: (base, isFocused) => ({
           //   ...base,
           //
@@ -210,19 +225,20 @@ export default class SingleSelect extends Component<{}, State, Props> {
           // borderColor: this.state.menuIsOpen ? 'red' : 'green',
           // }),
 
-          option: (styles, {isDisabled, isFocused, isSelected }) => ({
+          option: (styles, {isDisabled, isFocused, isSelected}) => ({
             ...styles,
 
             backgroundColor: isDisabled
           ? undefined
           : isSelected
-          ? "rgba(238, 115, 92, 0.1)"
+          ? "rgba(255, 211, 91, 0.2)"
           : isFocused
-          ? "rgba(238, 115, 92, 0.1)"
+          ? "rgba(255, 211, 91, 0.2)"
         :  undefined,
 
-        color: "rgba(24, 39, 58, 0.94)",
+color: "rgba(24, 39, 58, 1)",
 borderRadius: "4px",
+//border:"2px solid red",
 margin: "auto",
 width: "93%",
 fontSize: '16px',

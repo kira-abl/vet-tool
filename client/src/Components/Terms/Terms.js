@@ -28,7 +28,7 @@ const Terms = props => {
     
 
       
-      Welcome to our Terms and Conditions (the "Terms") of Camine Body Condition Score Application https://beamish-sunburst-99ce83.netlify.app/ (the '"App"). This App is part of a research collaboration between Stay Labs Inc., subsidiary company of Petsapien Ltd. (herein together: “Stay Labs”) and Tech4Animals Lab, University of Haifa (herein: "Tech4Animals") (herein together: the "Collaboration", "We", "Us", or "Our"). These Terms are a legal agreement between you and the Collaboration, and they apply to your use of the App. Your use of the App is designed to provide us with information about the dogs under your examination (the "Dog Data") and to helps Us to improve Our hands-off assessment and scoring tool to assess dog's nutrition and wellbeing (the "Research").
+      Welcome to our Terms and Conditions (the "Terms") of Camine Body Condition Score Application https://vet-tool-web1.onrender.com/ (the '"App"). This App is part of a research collaboration between Stay Labs Inc., subsidiary company of Petsapien Ltd. (herein together: “Stay Labs”) and Tech4Animals Lab, University of Haifa (herein: "Tech4Animals") (herein together: the "Collaboration", "We", "Us", or "Our"). These Terms are a legal agreement between you and the Collaboration, and they apply to your use of the App. Your use of the App is designed to provide us with information about the dogs under your examination (the "Dog Data") and to helps Us to improve Our hands-off assessment and scoring tool to assess dog's nutrition and wellbeing (the "Research").
       <br></br>   
 
       <p>
