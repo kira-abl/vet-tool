@@ -11,6 +11,27 @@ const Dogs = props => {
   window.scrollTo(0, 0)
   }, [])
 
+  const [buttonColor, setButtonColor] = useState("rgba(0, 0, 0, 0.04)");
+  const [buttonTextColor, setButtonTextColor] = useState("#9E9E9E");
+
+  const ConditionalLink = ({children}) => {
+    if (props.answers.weight !== '') {
+      console.log("In conditional link of validation",props.answers.weight);
+      setButtonColor("#F26A56");
+      setButtonTextColor("#FFFFFF");
+        return <Link to="thanks" style={{ textDecoration: "none" }} >{children}</Link>;
+      }
+        else {
+          
+          console.log("Data is empty", props.answers.weight,);
+          setButtonColor("#rgba(0, 0, 0, 0.04)");
+          setButtonTextColor("##9E9E9");
+            return <>{children}</>;
+          }
+  };
+
+
+
   return (
     <div>
     <Logos
@@ -21,7 +42,9 @@ const Dogs = props => {
     />
 
     <Form
-    />
+    answers={props.answers}
+    setAnswers={props.setAnswers}/>
+    
 
 
 
@@ -33,13 +56,13 @@ const Dogs = props => {
       </Button>
       </Link>
 
-      <Link to="thanks" style={{ textDecoration: "none" }}>
-      <Button width="104px" bcolor="#F26A56" height="40px" color="#FFFFFF" className="buttonNav1" border="0px"  >
+      <ConditionalLink>
+      <Button width="104px" bcolor={buttonColor} height="40px" color={buttonTextColor} className="buttonNav1" border="0px"  >
         {" "}
         Finish{" "}
       </Button>
-      </Link>
-
+      </ConditionalLink>
+  
       </div>
     </div>
   );

@@ -18,10 +18,28 @@ import Terms from "./Components/Terms/Terms";
 
 const App = (props) => {
 
-const [email, setEmail] = React.useState("this");
+const [answers, setAnswers] = React.useState({
+  email:'',
+  vet:'',
+  image1:'',
+  image2:'',
+  image3:'',
+  bcs:'',
+  age:'',
+  weight:'',
+  sex:'',
+  spayed:'',
+  breed:'',
+}
+
+);
 const [user, setUser] = React.useState("no user");
-console.log(email, "In app");
+console.log(answers, "Answers in component App");
 console.log(user, "In app");
+
+const addAnswer = (contactInfo) => {
+  setAnswers([...answers, contactInfo]);
+};
 
 
 
@@ -29,16 +47,21 @@ console.log(user, "In app");
     <div>
       <Switch>
         <Route exact path="/" component={Welcome}/>
-        <Route path="/upload" component={Upload} />
-        <Route path="/upload1" component={Upload1} />
-        <Route path="/upload2" component={Upload2} />
+        <Route path="/upload" render={(props)=>
+                                 <Upload answers={answers} setAnswers={setAnswers}/>}/>
+        <Route path="/upload1" render={(props)=>
+                                 <Upload1 answers={answers} setAnswers={setAnswers}/>} />
+        <Route path="/upload2" render={(props)=>
+                                 <Upload2 answers={answers} setAnswers={setAnswers}/>} />
         <Route path="/menu" component={MainMenu} />
         <Route path="/dashboard" component={Dashboard} />
-        <Route path="/charts" component={Charts} />
-        <Route path="/dogs" component={Dogs} />
+        <Route path="/charts" render={(props)=>
+                                 <Charts answers={answers} setAnswers={setAnswers}/>} />
+        <Route path="/dogs" render={(props)=>
+                                 <Dogs answers={answers} setAnswers={setAnswers}/>}  />
         <Route path="/thanks" component={Thanks} />
         <Route path="/validation" render={(props)=>
-                                 <Validation email={email} user={user} setEmail={setEmail} setUser={setUser}/>}
+                                 <Validation answers={answers} setAnswers={setAnswers}/>}
         
         
         

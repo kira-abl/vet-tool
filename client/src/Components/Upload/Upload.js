@@ -61,6 +61,8 @@ const Upload = (props) => {
     setFiles(e.target.files[0]);
     setDesign("show");
     setFrameDesign("frameLarge");
+    props.setAnswers({ ...props.answers, "image1": e.target.files[0]})
+    console.log(props.answers);
   }
 
   const functionTwo = (e) => {

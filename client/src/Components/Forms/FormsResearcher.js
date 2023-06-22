@@ -7,10 +7,10 @@ export default function Form(props) {
   const { register, getValues, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data.value);
 
-  console.log(props.email, "forms email");
+  //console.log(props.email, "forms email");
 
   const values = getValues();
-  console.log(values);
+  //console.log(values);
 
   const [vet, setVet] = React.useState("radioBox");
   const [vetN, setVetN] = React.useState("radioBox");
@@ -21,24 +21,41 @@ export default function Form(props) {
 
   if (e.target.id === "yes") {
     setVet("radioBoxColor");
-    props.setUser("yes")
+    props.setAnswers({ ...props.answers, "vet": "yes"})
     setVetN("radioBox");
 }
   if (e.target.id === "no")
   {
     setVetN("radioBoxColor");
-    props.setUser("no")
+    props.setAnswers({ ...props.answers, "vet": "no"})
     setVet("radioBox");
 }
 
 };
 
+
+
 const onChangeMail = e => {
-  console.log(e.target.value);
-  props.setEmail(e.target.value)
-
-
+  const emailRegex =
+  new RegExp(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+\.([A-Za-z0-9]){2,}$/, "gm");
   
+  
+  // console.log(emailRegex.test(e.target.value));
+
+  let email = emailRegex.test(e.target.value);
+  console.log(email);
+
+  // let email1 = emailRegex.test(e.target.value);
+  // console.log(email1);
+  
+  if (email) {
+    props.setAnswers({ ...props.answers, "email": e.target.value})
+    console.log(props.answers.email);
+  }
+  else {
+    
+    console.log("False");
+  }
 
 };
 
@@ -93,3 +110,5 @@ const onChangeMail = e => {
 </form>
   );
 }
+
+

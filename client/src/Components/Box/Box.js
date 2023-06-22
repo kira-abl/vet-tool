@@ -52,9 +52,9 @@ const Row = props => {
 
 
     useEffect(() => {
-      if (props.data !== props.title) {uncolorBorder(); colorDog1(); uncolorDog()};
-      if (props.data === props.title) {colorBorder(); colorDog(); uncolorDog1()};
-    }, [props.data]);
+      if (props.answers.bcs !== props.title) {uncolorBorder(); colorDog1(); uncolorDog()};
+      if (props.answers.bcs === props.title) {colorBorder(); colorDog(); uncolorDog1()};
+    }, [props.answers.bcs]);
      
       
 
@@ -69,7 +69,7 @@ const Row = props => {
         
             <div onClick={() => {
             { 
-              props.data === props.title ? props.setData("none") : props.setData(props.title);
+              props.answers.bcs === props.title ? props.setAnswers({ ...props.answers, "bcs": ''}) : props.setAnswers({ ...props.answers, "bcs": props.title});
               
               // props.setData(props.title);
             }
@@ -99,23 +99,23 @@ const Row = props => {
 
 function Box(props) {
 
-    console.log("Data in Box", props.data);
+    console.log("Data in Box", props.answers.bcs);
 
     return (
 //         <div className="preferences">
             <div>
                 
 
-            <Row title="Emaciated" data={props.data}
-      setData={props.setData} url={"/assets/images/1mini.png"} url2={"/assets/images/1ymini.png"}>
+            <Row title="Emaciated" answers={props.answers}
+      setAnswers={props.setAnswers} url={"/assets/images/1mini.png"} url2={"/assets/images/1ymini.png"}>
             <p>
                  Ribs, lumbar vertebrae, pelvic bones and all bony prominences evident from a distance. No discernible body fat. Obvious loss of muscle mass.
             </p>
 
             </Row>
 
-            <Row title="Very Thin" data={props.data}
-      setData={props.setData} url={"/assets/images/2mini.png"} url2={"/assets/images/2ymini.png"}> 
+            <Row title="Very Thin" answers={props.answers}
+      setAnswers={props.setAnswers} url={"/assets/images/2mini.png"} url2={"/assets/images/2ymini.png"}> 
             <p>
             Ribs, lumbar vertebrae and pelvic bones
                 easily visible. No palpable fat. Some evidence
@@ -124,8 +124,8 @@ function Box(props) {
 
             </Row>
 
-            <Row title="Thin" data={props.data}
-      setData={props.setData} url={"/assets/images/3mini.png"} url2={"/assets/images/3ymini.png"}>
+            <Row title="Thin" answers={props.answers}
+      setAnswers={props.setAnswers} url={"/assets/images/3mini.png"} url2={"/assets/images/3ymini.png"}>
             <p>
             Ribs easily palpated and may be visible with no
 palpable fat. Tops of lumbar
@@ -135,8 +135,8 @@ Obvious waist.                 </p>
 
             </Row>
 
-            <Row title="Underweight" data={props.data}
-      setData={props.setData} url={"/assets/images/4mini.png"} url2={"/assets/images/4ymini.png"}>
+            <Row title="Underweight" answers={props.answers}
+      setAnswers={props.setAnswers} url={"/assets/images/4mini.png"} url2={"/assets/images/4ymini.png"}>
             <p>
             Ribs easily palpable, with minimal fat
 covering. Waist easily noted, viewed from above.
@@ -145,8 +145,8 @@ Abdominal tuck evident.                </p>
             </Row>
 
             <Row title="
-            Ideal" data={props.data}
-      setData={props.setData} url={"/assets/images/5mini.png"} url2={"/assets/images/5ymini.png"}>
+            Ideal" answers={props.answers}
+            setAnswers={props.setAnswers} url={"/assets/images/5mini.png"} url2={"/assets/images/5ymini.png"}>
             <p>
             Ribs palpable without
 excess fat covering. Waist
@@ -157,8 +157,8 @@ when viewed.                 </p>
 
             </Row>
 
-            <Row title="Overweight" data={props.data}
-      setData={props.setData} url={"/assets/images/6mini.png"} url2={"/assets/images/6ymini.png"}>
+            <Row title="Overweight" answers={props.answers}
+      setAnswers={props.setAnswers} url={"/assets/images/6mini.png"} url2={"/assets/images/6ymini.png"}>
             <p>
             Ribs palpable with slight excess fat covering.
  Waist is discernible viewed from above but is not
@@ -166,8 +166,8 @@ prominent. Abdominal tuck apparent.                </p>
 
             </Row>
 
-            <Row title="Heavy" data={props.data}
-      setData={props.setData} url={"/assets/images/7mini.png"} url2={"/assets/images/7ymini.png"}>
+            <Row title="Heavy" answers={props.answers}
+      setAnswers={props.setAnswers} url={"/assets/images/7mini.png"} url2={"/assets/images/7ymini.png"}>
             <p>
             Ribs palpable with
 difficulty; heavy fat cover.
@@ -179,8 +179,8 @@ tuck may be present.                </p>
 
             </Row>
 
-            <Row title="Obese" data={props.data}
-      setData={props.setData} url={"/assets/images/8mini.png"} url2={"/assets/images/8ymini.png"}>
+            <Row title="Obese" answers={props.answers}
+      setAnswers={props.setAnswers} url={"/assets/images/8mini.png"} url2={"/assets/images/8ymini.png"}>
             <p>
             Ribs not palpable under very heavy fat
 cover, or palpable only with significant pressure.
@@ -190,8 +190,8 @@ abdominal distension may be present.                 </p>
 
             </Row>
 
-            <Row title="Severly Obese" data={props.data}
-      setData={props.setData} url={"/assets/images/9mini.png"} url2={"/assets/images/9ymini.png"}>
+            <Row title="Severly Obese" answers={props.answers}
+      setAnswers={props.setAnswers} url={"/assets/images/9mini.png"} url2={"/assets/images/9ymini.png"}>
             <p>
             Massive fat deposits
 over thorax, spine and base

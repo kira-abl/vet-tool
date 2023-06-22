@@ -53,9 +53,9 @@ export default class SingleSelect extends Component<{}, State, Props> {
 
     selectedOption === null ?
 
-    this.props.setData("none") :
+    this.props.setAnswers({ ...this.props.answers, "breed": ''}) :
 
-    this.props.setData(selectedOption.value);
+    this.props.setAnswers({ ...this.props.answers, "breed": selectedOption.value});
 
     };
 
@@ -89,7 +89,7 @@ export default class SingleSelect extends Component<{}, State, Props> {
 
     const { selectedOption } = this.props;
 
-    const info = this.props.data;
+    const info = this.props.answers;
     const effect = this.props.show;
 
     console.log(`The current state of data is:`, info);

@@ -11,26 +11,33 @@ const Charts = props => {
   window.scrollTo(0, 0)
 }, [])
 
-  const [data, setData] = React.useState("none");
+
   const [show, setShow] = React.useState("hidden");
+  const [buttonColor, setButtonColor] = useState("rgba(0, 0, 0, 0.04)");
+  const [buttonTextColor, setButtonTextColor] = useState("#9E9E9E");
 
 
-console.log("Data in Charts", data);
+console.log("Data in Charts", props.answers);
 console.log(show);
 
   const ConditionalLink = ({children}) => {
-      if (data !== "none") {
-        console.log("In conditional link data is", data);
+      if (props.answers.bcs !== '') {
+        console.log("In conditional link data is", props.answers.bcs);
+        setButtonColor("#F26A56");
+        setButtonTextColor("#FFFFFF");
           return <Link to="dogs" style={{ textDecoration: "none" }} >{children}</Link>;
         }
           else {
-            console.log("Data is empty", data);
+            console.log("Data is empty", props.answers.bcs);
+            setButtonColor("#rgba(0, 0, 0, 0.04)");
+            setButtonTextColor("##9E9E9");
               return <>{children}</>;
             }
     };
 
-    const Validate = (props) => {
-        if (data === "none") {
+    const Validate = () => {
+        console.log("In function validate", props.answers);
+        if (props.answers.bcs === '') {
           setShow("visible");
           console.log("Button", show);
 
@@ -39,8 +46,8 @@ console.log(show);
 
     useEffect(() => {
 
-    if (show === "visible" && data !== "none" ) setShow("hidden");
-  }, [data]);
+    if (show === "visible" && props.answers.bcs !== '' ) setShow("hidden");
+  }, [props.answers]);
 
 //   useEffect(() => {
 //     const timer = setTimeout (()  => {
@@ -60,8 +67,8 @@ console.log(show);
     <p className="smallHeader">BSC:</p>
       
       <Box
-      data={data}
-      setData={setData}/>
+      answers={props.answers}
+      setAnswers={props.setAnswers}/>
 
       
 
@@ -85,7 +92,7 @@ console.log(show);
 </Link>
       <ConditionalLink>
       <Button function={Validate}
-       width="104px" bcolor="#F26A56" height="40px" color="#FFFFFF" className="buttonNav1" border="0px"  >
+       width="104px" bcolor={buttonColor} height="40px" color={buttonTextColor} className="buttonNav1" border="0px"  >
         {" "}
         Next{" "}
       </Button>
