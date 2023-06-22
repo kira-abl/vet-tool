@@ -103,7 +103,7 @@ const Upload = (props) => {
     <div>
       <Logos
         h3=<h3>Snap a Foto <br></br> From Behind</h3>
-        textNormal=<p>Take a side-view picture of the dog (see example below):</p>
+        textNormal=<p>Take a picture of the dog from the rear (see example below):</p>
         start="3"
         list = "true"
       />
