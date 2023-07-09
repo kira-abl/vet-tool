@@ -76,7 +76,7 @@ const defaultRender = () => {
 
 const renderRootPath = () => (
   <>
-    {/* <Route path="/" render={defaultRender} /> */}
+    <Route path="/" render={defaultRender} />
     <Route
       exact
       path="/"
