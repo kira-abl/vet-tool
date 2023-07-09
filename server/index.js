@@ -112,7 +112,7 @@ else if (data === "image") {
 
   // Save the Location (url) to your database and Key if needs be.
   // As good developers, we should return the url and let other function do the saving to database etc
-  console.log("Location", location, key);
+  console.log("Location", location, "Key", key);
 
   return location;
 
@@ -121,8 +121,8 @@ else if (data === "image") {
 
 
 
-app.post("/logmood",(req, res, next) => {
-  console.log(req.body.result);
+app.post("/submitdata",(req, res, next) => {
+  console.log(req.body);
 
   let array = [
     {
@@ -144,28 +144,28 @@ app.post("/logmood",(req, res, next) => {
 
 console.log(array);
 
-  if (req.body.result.question2 !== undefined) {
-  console.log(req.body.result.question2[0].name);
-    array[0].content = req.body.result.question2[0].content;
-      array[0].name = req.body.result.question2[0].name;
+  if (req.body.answers.image1 !== undefined) {
+  console.log("Image body", req.body.answers.image1);
+    array[0].content = req.body.answers.image1;
+      array[0].name = req.body.answers.image1Name;
     } else  {
       array[0].content = "";
       array[0].name = "";
       array[0].link = "";
       };
 
-    if (req.body.result.question3 !== undefined) {
-      array[1].content = req.body.result.question3[0].content;
-        array[1].name = req.body.result.question3[0].name;
+    if (req.body.answers.image2 !== undefined) {
+      array[1].content = req.body.answers.image2;
+        array[1].name = req.body.answers.image2Name;
       } else  {
         array[1].content = "";
         array[1].name = "";
         array[1].link = "";
         };
 
-      if (req.body.result.question5 !== undefined) {
-        array[2].content = req.body.result.question5[0].content;
-          array[2].name = req.body.result.question5[0].name;
+      if (req.body.answers.image3 !== undefined) {
+        array[2].content = req.body.answers.image3;
+          array[2].name = req.body.answers.image3Name;
         } else  {
           array[2].content = "";
           array[2].name = "";
@@ -206,7 +206,7 @@ console.log(array);
 
       console.log('All images have been uploaded successfully');
       queries
-        .logMood(array, req.body)
+        .submitData(array, req.body)
         .then(value => console.log("In theDB!"))
         .then(value => res.status(200).json({"name":"GeeksforGeeks"}))
         .catch((err) => next(err));

@@ -54,7 +54,7 @@
       object-fit: contain;
     }
 
-.show {
+/* .show {
 display: flex;
 flex-direction: row;
 justify-content: space-between;
@@ -66,12 +66,12 @@ margin: 16px auto auto auto;
 background: #FCFCFD;
 border-radius: 12px;
 border-style: none;
-object-fit: contain;
+object-fit: contain; */
 
 
       /* Pale orange */
 
-    }
+    /* } */
 
 .imageSmall {
 

@@ -20,14 +20,14 @@ const NewFrame = props => {
 
       <div className={props.design}>
 
-        <div style={{height: "100%" }} >
+        {/* <div style={{height: "100%" }} >
           {props.image}
-        </div >
-        <div style={{ padding: "10px", minWidth: "33%", textAlign: "left" }} >
+        </div > */}
+        <div style={{ padding: "10px 0px 10px 10px", minWidth: "33%", textAlign: "left", overflow: "hidden" }} >
           <p className="text" style={{ fontSize: "10px" }}>
           {props.caption}  </p>
         </div >
-        <div >
+        <div style={{ paddingRight: "10px"}} >
           {props.icon}
         </div >
       </div>

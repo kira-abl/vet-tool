@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import "./Upload.css";
 // import Frame from "../Frame/Frame.js";
 import NewFrame from "../NewFrame/NewFrame.js";
@@ -14,8 +14,11 @@ import { Link } from "react-router-dom";
 const Upload = (props) => {
 
   useEffect(() => {
-  window.scrollTo(0, 0)
-}, [])
+    if (props.answers.image1 !== '') {
+    setCaption("File " + props.answers.image1Name + " added successfuly");
+    console.log("State in upload");
+    setDesign("show");}
+  }, []);
 
   const mystyle = {
     padding: "0px",
@@ -36,7 +39,8 @@ const Upload = (props) => {
   const [buttonTextColor, setButtonTextColor] = useState("#9E9E9E");
   const inputRef = useRef();
 
-
+  
+  
 
 
   {/*useEffect(() => {
@@ -48,21 +52,41 @@ const Upload = (props) => {
 
   const handleClick = () => {
     inputRef.current.click();
-    console.log("Ref", inputRef.current.value);
+    // console.log("Ref", inputRef.current.value);
   }
 
+
+  //The value stored in the original form element:
   const changeInput = () => {
     inputRef.current.value = "";
     console.log("Ref", inputRef.current.value);
   }
 
+  function readFile(file){
+    return new Promise((resolve, reject) => {
+      var fr = new FileReader();  
+      fr.onload = () => {
+        props.setAnswers({ ...props.answers, "image1": fr.result, "image1Name": file.name, "image1Preview": URL.createObjectURL(file) });
+        // setCaption("Adding...");
+        
+      };
+      fr.onerror = reject;
+      fr.readAsDataURL(file);
+    });
+  }
+
+
+  
+
   const functionOne = (e) => {
-    console.log(files);
+
     setFiles(e.target.files[0]);
+    console.log(e.target.files[0]);
     setDesign("show");
     setFrameDesign("frameLarge");
-    props.setAnswers({ ...props.answers, "image1": e.target.files[0]})
-    console.log(props.answers);
+    
+    
+    
   }
 
   const functionTwo = (e) => {
@@ -74,21 +98,23 @@ const Upload = (props) => {
       setDesign("hide");
       setFrameDesign("frame");
       setFiles(null);
+      props.setAnswers({ ...props.answers, "image1Name": '', "image1": '', "image1Preview": ''})
     }
     else {
       console.log(e.target.src);
       setName(e.target.files[0].name + " added successfuly");
-      setCaption(e.target.files[0].name);
-      setPreview(URL.createObjectURL(e.target.files[0]));
+      setCaption("File " + e.target.files[0].name + " added successfuly");
+      // setPreview(URL.createObjectURL(e.target.files[0]));
+      readFile(e.target.files[0]);
     }
   }
 
   const ConditionalLink = ({children}) => {
-    if (files !== null) {
+    if (props.answers.image1 !== '') {
       console.log("In conditional link data is", files);
       setButtonColor("#F26A56");
       setButtonTextColor("#FFFFFF");
-        return <Link to="upload1" style={{ textDecoration: "none" }} >{children}</Link>;
+        return <Link to="dogs" style={{ textDecoration: "none" }} >{children}</Link>;
       }
         else {
           
@@ -103,10 +129,10 @@ const Upload = (props) => {
   return (
     <div>
       <Logos
-        h3=<h3>Snap a Side Photo</h3>
-        textNormal=<p>Take a side-view picture of the dog (see example below):</p>
-        start="1"
-        list = "true"
+        h3=<h3>Upload a Video File</h3>
+        textNormal=<p>Make a short video showing your dog's face and body from different angles</p>
+        // start="1"
+      //   list = "false"
       />
 
       <div className="form">
@@ -121,16 +147,16 @@ const Upload = (props) => {
       <NewFrame
         text={name}
         caption={caption}
-        imageDog={"/assets/images/Side.png"}
+        imageDog={"/assets/images/Dogs.png"}
         className="dogImage"
-        image=<img src={preview} className="imageSmall"/>
+        // image=<img src={preview} className="imageSmall"/>
         design={design}
         frameDesign={frameDesign}
         icon=<img src={"/assets/images/close-circle.png"} style={mystyle} onClick={(e) => {functionTwo(e)}}/>
         button=<button onClick={handleClick} className="button">
         <img src={"/assets/images/Vector.png"} style={iconStyle}/>
                   {" "}
-                  Add a photo{" "}
+                  Add a video{" "}
               </button>
       />
 

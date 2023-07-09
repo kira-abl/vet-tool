@@ -53,6 +53,36 @@ form {
     
   }
 
+  .radioBoxThree {
+    border-radius: 8px;
+    border: 1px solid #52575C;
+    width: 90px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-left: 0px;
+
+
+
+  }
+
+  .radioBoxThreeColor {
+
+    border-radius: 8px;
+    border: 1px solid #FFD35B;
+    width: 90px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-left: 0px;
+    background-color: rgba(255, 211, 91, 0.1);
+    
+  }
+
 
   .label {
 
@@ -101,9 +131,9 @@ letter-spacing: 0.005em;
 
 color: #0F172A;
 
-/* display: grid;
+display: grid;
 grid-template-columns: 1em auto;
-gap: 1.5em; */
+gap: 2em;
 }
 
 

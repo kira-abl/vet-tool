@@ -1,8 +1,8 @@
 const connection = require("../database/db_connection");
 
-const logMood = (array, body) => {
+const submitData = (array, body) => {
 
-// console.log("Body",  body.result['question18-Comment']);
+console.log("Body",  body.answers.weight);
 
   let whicOp = "";
   let daysAgo = "";
@@ -34,46 +34,19 @@ const logMood = (array, body) => {
         var time = year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second;
 
 
-  // let time = d.toUTCString();
+const {age, weight, sex, spayed, breed, email} = body.answers;
 
 
-const {question9} = body.result;
-
-// if (Question401 === true) {
-//    whichOp = Question402;
-//    daysAgo = Question403;
-//
-//  } else {
-//    whichOp = "";
-//    daysAgo = "";
-// }
-//
-// if (Question111 === true) {
-//    type = "clinical";
-//
-//  } else {
-//    type = "research";
-//
-// }
-//
-// if (body.result['question18-Comment'] !== undefined) {
-//    other = body.result['question18-Comment'];
-//    console.log(other);
-//
-//
-//  } else {
-//    other = "";
-// }
-
+console.log("Weight", weight);
   console.log("Type", type);
 
   console.log("At queries");
   //
   return connection.query(
-    `INSERT INTO answers(image1, image2, image3, bcs, date)
-     VALUES($1, $2, $3, $4, $5)`,
+    `INSERT INTO answers(image1, image2, image3, age, weight, sex, spayed, breed, email, date)
+     VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
 
-    [array[0].link, array[1].link, array[2].link, question9, time]
+    [array[0].link, array[1].link, array[2].link, age, weight, sex, spayed, breed, email, time]
   );
 };
 
@@ -83,13 +56,10 @@ const getData = () => {
   return connection.query('SELECT * FROM answers');
 };
 
-// const getImages = () => {
-//   return connection.query(`SELECT image1, image2 FROM answers WHERE (image2!='')`);
-// };
+
 
 
 module.exports = {
-  logMood,
+  submitData,
   getData,
-  // getImages
 };

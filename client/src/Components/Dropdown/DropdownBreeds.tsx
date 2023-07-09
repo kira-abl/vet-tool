@@ -264,7 +264,7 @@ fontWeight: 400,
           // components={ { DropdownIndicator } }
           value={selectedOption}
           onChange={this.handleChange}
-          placeholder="Breed"
+          placeholder={this.props.answers.breed}
           className="basic-single"
           classNamePrefix="select"
           // defaultValue={colourOptions[0]}

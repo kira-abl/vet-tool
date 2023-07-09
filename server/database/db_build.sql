@@ -8,11 +8,13 @@ CREATE TABLE answers (
   image1 VARCHAR(500),
   image2 VARCHAR(500),
   image3 VARCHAR(500),
-  bcs VARCHAR(50),
+  age VARCHAR(50),
+  weight VARCHAR(50),
+  sex VARCHAR(50),
+  spayed VARCHAR(50),
+  breed VARCHAR(50),
+  email VARCHAR(50),
   date VARCHAR(50)
-
-
-
 
 
 );

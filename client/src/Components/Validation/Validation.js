@@ -13,18 +13,28 @@ const Validation = (props) => {
 
   console.log("In validation answers", props.answers);
 
-  useEffect(() => {
-  window.scrollTo(0, 0)
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+  // }, []);
 
+// useEffect(() => {
+//     window.scrollTo(0, 0);
+//   }, []);
   
 
 
-  
+const emailRegex =
+new RegExp(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+\.([A-Za-z0-9]){2,}$/, "gm");
+
+
+// console.log(emailRegex.test(e.target.value));
+
+let email = emailRegex.test(props.answers.email);
+console.log(email);
 
 
   const ConditionalLink = ({children}) => {
-    if (props.answers.vet !== '' && props.answers.email !== '') {
+    if (email) {
       console.log("In conditional link of validation",props.answers.vet);
       setButtonColor("#F26A56");
       setButtonTextColor("#FFFFFF");

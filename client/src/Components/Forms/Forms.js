@@ -19,8 +19,27 @@ console.log(show);
 
   const [male, setMale] = React.useState("radioBox");
   const [female, setFemale] = React.useState("radioBox");
-  const [spayed, setSpayed] = React.useState("radioBox");
-  const [spayedN, setSpayedN] = React.useState("radioBox");
+  const [spayed, setSpayed] = React.useState("radioBoxThree");
+  const [spayedN, setSpayedN] = React.useState("radioBoxThree");
+  const [spayedA, setSpayedA] = React.useState("radioBoxThree");
+
+  useEffect(() => {
+  if (props.answers.sex === "male") {
+      setMale("radioBoxColor");
+  }
+  if (props.answers.sex === "female") {
+    setFemale("radioBoxColor");
+}
+if (props.answers.spayed === "yes") {
+  setSpayed("radioBoxThreeColor");
+}
+if (props.answers.spayed === "no") {
+  setSpayedN("radioBoxThreeColor");
+}
+if (props.answers.spayed === "N/A") {
+  setSpayedA("radioBoxThreeColor");
+}
+  }, []);
 
 
   const onChangeAge = e => {
@@ -53,16 +72,26 @@ console.log(show);
 
 if (e.target.id === "spayed")
 {
-  setSpayed("radioBoxColor");
-  setSpayedN("radioBox");
+  setSpayed("radioBoxThreeColor");
+  setSpayedN("radioBoxThree");
+  setSpayedA("radioBoxThree");
   props.setAnswers({ ...props.answers, "spayed": "yes"})
 }
 
 if (e.target.id === "spayed2")
 {
-  setSpayedN("radioBoxColor");
-  setSpayed("radioBox");
+  setSpayedN("radioBoxThreeColor");
+  setSpayed("radioBoxThree");
+  setSpayedA("radioBoxThree");
   props.setAnswers({ ...props.answers, "spayed": "no"})
+}
+
+if (e.target.id === "spayed3")
+{
+  setSpayedA("radioBoxThreeColor");
+  setSpayedN("radioBoxThree");
+  setSpayed("radioBoxThree");
+  props.setAnswers({ ...props.answers, "spayed": "N/A"})
 }
 };
 
@@ -73,12 +102,12 @@ if (e.target.id === "spayed2")
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="field">
         <label for="age">Age (years)</label>
-        <input onInput={onChangeAge} type="text" id="name" placeholder="Age" {...register("Age", {required: true, maxLength: 80})} />
+        <input onInput={onChangeAge} type="text" id="name" placeholder="Age" value={props.answers.age} {...register("Age", {required: true, maxLength: 80})} />
       </div>
 
       <div className="field">
         <label for="weight">Weight (kg)</label>
-        <input onInput={onChangeWeight} type="text" id="name" placeholder="Weight" {...register("Weight", {required: true, maxLength: 80})} />
+        <input onInput={onChangeWeight} type="text" id="name" placeholder="Weight" value={props.answers.weight} {...register("Weight", {required: true, maxLength: 80})} />
       </div>
 
       <div style={{marginBottom: "16px"}}>
@@ -124,6 +153,12 @@ if (e.target.id === "spayed2")
     <label class="form-control">
     <input  type="radio" name="radio1" id='spayed2' />
     No
+    </label>
+  </div>
+  <div className={spayedA} >
+    <label class="form-control">
+    <input  type="radio" name="radio1" id='spayed3' />
+    N/A
     </label>
   </div>
 </div>

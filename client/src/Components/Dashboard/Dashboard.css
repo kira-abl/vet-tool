@@ -1,0 +1,147 @@
+/* .indicator {
+  display: none;
+} */
+
+.indicator{
+  width: 80px;
+  height: 80px;
+
+  border: 2px solid #f3f3f3;
+  border-top:3px solid #f25a41;
+  border-radius: 100%;
+
+  position: relative;
+  top:50px;
+  bottom:0;
+  left:0;
+  right: 0;
+  margin: auto;
+
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  } to {
+      transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+.main {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 70%;
+  margin: auto;
+}
+
+.brownConts {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+.brownContFlex {
+  background: #a6d8e0;
+  border-radius: 20px;
+  text-align: center;
+
+  font-family: Sunflower;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 10px;
+
+  color: #bdb246;
+
+  height: 25%;
+}
+
+.smallContFlex {
+  background: #54bfa3;
+  border-radius: 20px;
+  text-align: center;
+
+  font-family: Sunflower;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 10px;
+  padding: 2px;
+  margin-top: 1%;
+
+  color: black;
+
+  height: 25%;
+}
+
+
+
+
+
+.greenContFlex {
+  background: #54bfa3;
+  border-radius: 20px;
+  text-align: center;
+
+  font-family: Sunflower;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+
+  height: 25%;
+
+  color: black;
+}
+
+.smallButton1 {
+  background: #52bed9;
+  border-radius: 12px;
+  text-align: center;
+
+  font-family: Sunflower;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+
+
+  height: 25%;
+
+  color: black;
+}
+
+.smallButton2 {
+  background: #3fb55d;
+  border-radius: 12px;
+  text-align: center;
+
+  font-family: Sunflower;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+
+
+  height: 25%;
+
+  color: black;
+}
+
+
+
+@media screen and (max-width: 350px) {
+  .main {
+    flex-wrap: wrap;
+    width: 95%;
+  }
+}

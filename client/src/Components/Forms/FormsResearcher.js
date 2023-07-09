@@ -15,47 +15,50 @@ export default function Form(props) {
   const [vet, setVet] = React.useState("radioBox");
   const [vetN, setVetN] = React.useState("radioBox");
 
+//Radio box onChange function:
+//   const onChange = e => {
+//   console.log(e.target.id);
 
-  const onChange = e => {
-  console.log(e.target.id);
+//   if (e.target.id === "yes") {
+//     setVet("radioBoxColor");
+//     props.setAnswers({ ...props.answers, "vet": "yes"})
+//     setVetN("radioBox");
+// }
+//   if (e.target.id === "no")
+//   {
+//     setVetN("radioBoxColor");
+//     props.setAnswers({ ...props.answers, "vet": "no"})
+//     setVet("radioBox");
+// }
 
-  if (e.target.id === "yes") {
-    setVet("radioBoxColor");
-    props.setAnswers({ ...props.answers, "vet": "yes"})
-    setVetN("radioBox");
-}
-  if (e.target.id === "no")
-  {
-    setVetN("radioBoxColor");
-    props.setAnswers({ ...props.answers, "vet": "no"})
-    setVet("radioBox");
-}
-
-};
+// };
 
 
 
 const onChangeMail = e => {
-  const emailRegex =
-  new RegExp(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+\.([A-Za-z0-9]){2,}$/, "gm");
-  
-  
-  // console.log(emailRegex.test(e.target.value));
 
-  let email = emailRegex.test(e.target.value);
-  console.log(email);
+  props.setAnswers({ ...props.answers, "email": e.target.value})
 
-  // let email1 = emailRegex.test(e.target.value);
-  // console.log(email1);
+  // const emailRegex =
+  // new RegExp(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+\.([A-Za-z0-9]){2,}$/, "gm");
   
-  if (email) {
-    props.setAnswers({ ...props.answers, "email": e.target.value})
-    console.log(props.answers.email);
-  }
-  else {
+  
+  // // console.log(emailRegex.test(e.target.value));
+
+  // let email = emailRegex.test(e.target.value);
+  // console.log(email);
+
+  // // let email1 = emailRegex.test(e.target.value);
+  // // console.log(email1);
+  
+  // if (email) {
+  //   props.setAnswers({ ...props.answers, "email": e.target.value})
+  //   console.log(props.answers.email);
+  // }
+  // else {
     
-    console.log("False");
-  }
+  //   console.log("False");
+  // }
 
 };
 
@@ -66,23 +69,23 @@ const onChangeMail = e => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="field">
 
-        <input onInput={onChangeMail} type="text" id="name" placeholder="Email Address" {...register("Email", {required: true, maxLength: 80})} />
+        <input onInput={onChangeMail} type="text" id="name" placeholder="Email Address" value={props.answers.email} {...register("Email", {required: true, maxLength: 80})} />
       </div>
 
 
 
 
 
-      <div style={{marginTop: "0px"}}>
+      {/* <div style={{marginTop: "0px"}}>
         <p style={{textAlign: "center", fontWeight: "400", fontFamily: "Poppins", fontSize: "14px", lineHeight: "23.8px", marginBottom: "16px", marginTop: "0px" }}>If you are a licensed veterinarian please check</p>
-      </div>
+      </div> */}
 
 
 
 
 
 
-<div className="radio" onChange={onChange}>
+{/* <div className="radio" onChange={onChange}>
   <div className={vet} id="radioBox1">
 
     <label class="form-control">
@@ -96,7 +99,7 @@ const onChangeMail = e => {
     No
     </label>
   </div>
-</div>
+</div> */}
 
 
 

@@ -24,7 +24,7 @@ const Logos = props => {
 <div className="header">
       <div className="logos" >
         <img src={"/assets/images/tech4logo.png"} className="image" />
-        <img src={"/assets/images/staylogo.png"} className="image" />
+        {/* <img src={"/assets/images/staylogo.png"} className="image" /> */}
       </div>
 
       <div>

@@ -12,6 +12,8 @@ const Charts = props => {
 }, [])
 
 
+
+
   const [show, setShow] = React.useState("hidden");
   const [buttonColor, setButtonColor] = useState("rgba(0, 0, 0, 0.04)");
   const [buttonTextColor, setButtonTextColor] = useState("#9E9E9E");
@@ -25,7 +27,7 @@ console.log(show);
         console.log("In conditional link data is", props.answers.bcs);
         setButtonColor("#F26A56");
         setButtonTextColor("#FFFFFF");
-          return <Link to="dogs" style={{ textDecoration: "none" }} >{children}</Link>;
+          return <Link to="upload1" style={{ textDecoration: "none" }} >{children}</Link>;
         }
           else {
             console.log("Data is empty", props.answers.bcs);

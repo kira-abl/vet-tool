@@ -54,6 +54,7 @@ const Row = props => {
     useEffect(() => {
       if (props.answers.bcs !== props.title) {uncolorBorder(); colorDog1(); uncolorDog()};
       if (props.answers.bcs === props.title) {colorBorder(); colorDog(); uncolorDog1()};
+      console.log("Effect");
     }, [props.answers.bcs]);
      
       

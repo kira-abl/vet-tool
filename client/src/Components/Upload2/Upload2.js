@@ -13,9 +13,9 @@ import { Link } from "react-router-dom";
 
 const Upload = (props) => {
 
-  useEffect(() => {
-  window.scrollTo(0, 0)
-}, [])
+//   useEffect(() => {
+//   window.scrollTo(0, 0)
+// }, [])
 
   const mystyle = {
     padding: "0px",
@@ -150,7 +150,7 @@ const Upload = (props) => {
       </div> */}
 
       <div className="buttonBox">
-      <Link to="/upload1" style={{ textDecoration: "none" }}>
+      <Link to="/charts" style={{ textDecoration: "none" }}>
       <Button width="104px" bcolor="white" height="40px" color="#0A0A0B" className="buttonNav1" border="1px solid #000000"  >
         {" "} 
         Back{" "}
