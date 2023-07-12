@@ -137,6 +137,7 @@ const Upload = (props) => {
 
       <div className="form">
         <input
+        accept="video/*"
           ref={inputRef}
           type="file"
           multiple
