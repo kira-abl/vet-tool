@@ -3,8 +3,8 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const app = express();
 const fs = require('fs');
-app.use(bodyParser.json({limit: '100mb'}));
-app.use(bodyParser.urlencoded({limit: '100mb', extended: true, parameterLimit:50000}));
+app.use(bodyParser.json({limit: '150mb'}));
+app.use(bodyParser.urlencoded({limit: '150mb', extended: true, parameterLimit:50000}));
 require('env2')('./config.env');
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
@@ -122,7 +122,7 @@ else if (data === "image") {
 
 
 app.post("/submitdata",(req, res, next) => {
-  console.log(req.body);
+  console.log("The body sent to the server", req.body);
 
   let array = [
     {
